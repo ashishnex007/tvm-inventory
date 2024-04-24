@@ -4,6 +4,7 @@ import Tablets from '@/pages/Tablets';
 import React from 'react';
 
 const Homepage = () => {
+
   return (
     <>
       <Navbarx />
