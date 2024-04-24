@@ -7,7 +7,7 @@ export default function Navbarx() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue('#1e293b')}
+        bg={useColorModeValue('#1e293b', 'white')}
         color={useColorModeValue('blue.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
@@ -210,13 +210,11 @@ const NAV_ITEMS: Array<NavItem> = [
         label: 'Visit TVM Website',
         subLabel: 'Our main page',
         href: 'https://tabletvendingmachine.netlify.app/',
-        target: '_blank',
       },
       {
         label: 'Video Demo',
         subLabel: 'See how it works',
         href: 'https://tabletvendingmachine.netlify.app/#demo',
-        target: '_blank',
       },
     ],
   },
@@ -227,7 +225,6 @@ const NAV_ITEMS: Array<NavItem> = [
         label: 'Prescription Generation',
         subLabel: 'See how it works',
         href: 'https://prescription-1.onrender.com/',
-        target: '_blank',
       },
     ],
   },

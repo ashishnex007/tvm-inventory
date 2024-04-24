@@ -41,11 +41,13 @@ const Tablets = () => {
 const totalBill = Object.keys(quantities).reduce(
   (total, index) =>
     total +
+      //@ts-ignore
     (parseInt(quantities[index]) || 0) * tablets[parseInt(index)].price,
   0
 );
 
 const getTabletQuantities = () => {
+    //@ts-ignore
   const tabletQuantities = [];
 
   tablets.forEach((tablet, index) => {
@@ -54,7 +56,7 @@ const getTabletQuantities = () => {
       tabletQuantities.push({ name: tablet.id, qtd: quantity.toString() });
     }
   });
-
+    //@ts-ignore
   return tabletQuantities;
 };
 
