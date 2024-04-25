@@ -1,5 +1,5 @@
 "use client";
-import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text, Input, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, TableContainer, Table, TableCaption, Thead, Tr, Th, Tbody, Tfoot, Td,  } from "@chakra-ui/react";
+import { Button, Box, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text, Input, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, TableContainer, Table, TableCaption, Thead, Tr, Th, Tbody, Tfoot, Td,  } from "@chakra-ui/react";
 import {ChevronUpIcon, AddIcon, MinusIcon} from '@chakra-ui/icons';
 import React, {useState} from "react";
 import { useRouter } from 'next/navigation';
@@ -81,9 +81,15 @@ async function displayRazorpay() {
 
   return (
     <div>
-      <div className="flex justify-evenly">
+      <div>
+      <Stack spacing={8}>
+        <Box
+          display="grid"
+          gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }}
+          gap={8}
+        >
         {tablets.map((tablet, index) => (
-          <Card key={index} maxW="xs" mb={8}>
+          <Card key={index} maxW="xs" mb={8} pb={8}>
             <CardBody>
               <div className="flex justify-center">
                 <Image
@@ -117,11 +123,13 @@ async function displayRazorpay() {
             </CardFooter>
           </Card>
         ))}
+        </Box>
+      </Stack>
       </div>
 
-      <div className="bg-sky-200 w-screen h-[5rem] fixed bottom-0 flex justify-between">
+      <div className="bg-sky-200 w-screen lg:h-[5rem] h-[4rem] fixed bottom-0 flex justify-between">
         <div className="flex items-center">
-          <h1 className="text-xl mx-4">Total Bill: {totalBill}</h1>
+          <h1 className="lg:text-xl text-md mx-4">Total Bill: {totalBill}</h1>
         </div>
         <div className="flex items-center">
           <Button onClick={onOpen} className="mx-4" style={{"backgroundColor":"#0891b2", color:"white"}}>
